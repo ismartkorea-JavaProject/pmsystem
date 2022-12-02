@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PmsDAO">
+
+	<!-- 로그인 처리를 위한 resultMap -->
+	<resultMap id="pmsMap" type="net.hibiznet.pms.vo.PmsVO">
+		<result property="no" column="no"/>	
+		<result property="name" column="name"/>
+		<result property="eNm" column="e_nm"/>
+		<result property="nickNm" column="nick_nm"/>
+		<result property="age" column="age"/>
+		<result property="sex" column="sex"/>
+		<result property="address1" column="address1"/>
+		<result property="address2" column="address2"/>
+		<result property="postNo" column="postno"/>
+		<result property="email" column="email"/>		
+		<result property="job" column="job"/>
+		<result property="sns1Addr" column="sns1_addr"/>
+		<result property="sns2Addr" column="sns2_addr"/>
+		<result property="sns3Addr" column="sns3_addr"/>
+		<result property="memo1" column="memo1"/>
+		<result property="memo2" column="memo2"/>
+		<result property="memo3" column="memo3"/>
+		<result property="telNo" column="telno"/>
+		<result property="cellNo" column="cellno"/>	
+	</resultMap>
+	
+	<select id="selectListPms" resultMap="pmsMap">
+	  select no, name, e_nm, nick_nm, age, sex, address1, address2, postno, email, job, cellno
+	    from pms_info
+	  order by name asc
+	</select>
+	
+	<select id="selectOnePms" resultMap="pmsMap">
+	  select no, name, e_nm, nick_nm, age, sex, address1, address2, postno, email, job, sns1_addr, sns2_addr, sns3_addr, memo1, memo2, memo3, telno, cellno
+	    from pms_info
+	   where no = #{no}
+	</select>	
+	
+	<insert id="savePms">
+	 INSERT INTO pms_info (`name`, `e_nm`, `nick_nm`, `age`, `sex`, `address1`, `address2`, `postno`, `email`, `job`, `sns1_addr`, `sns2_addr`, `sns3_addr`, `memo1`, `memo2`, `memo3`, `telno`, `cellno`)
+	 VALUES (#{name}, #{eNm}, #{nickNm}, #{age}, #{sex}, #{address1}, #{address2}, #{postNo}, #{email}, #{job}, #{sns1Addr}, #{sns2Addr}, #{sns3Addr}, #{memo1}, #{memo2}, #{memo3}, #{telNo}, #{cellNo})
+	</insert>
+	
+	<update id="updatePms">
+	 UPDATE pms_info
+	    SET  name = #{name}
+	       , e_nm = #{eNm}
+	       , nick_nm = #{nickNm}
+	       , age = #{age}
+	       , sex = #{sex}
+	       , address1 = #{address1}
+	       , address2 = #{address2}
+	       , postno = #{postNo}
+	       , email = #{email}
+	       , job = #{job}
+	       , sns1_addr = #{sns1Addr}
+	       , sns2_addr = #{sns2Addr}
+	       , sns3_addr = #{sns3Addr}
+	       , memo1 = #{memo1}
+	       , memo2 = #{memo2}
+	       , memo3 = #{memo3}
+	       , telno = #{telNo}
+	       , cellno = #{cellNo}
+	WHERE no = #{no}
+	</update>
+	
+	<delete id="deleteOnePms">
+		DELETE FROM pms_info WHERE no = #{no}
+	</delete>
+	
+	
+</mapper>

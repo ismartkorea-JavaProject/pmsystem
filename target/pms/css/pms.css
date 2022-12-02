@@ -1,0 +1,32 @@
+@charset "utf-8";
+/*CSS Document*/
+* {
+	margin : 0;
+	padding : 0;
+}
+body {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	line-height: 1.53m;
+	font-weight: normal;
+	color: #333;
+	background-color: #FFF;
+}
+img {border:none;}
+.clear {clear:both;}
+#wrap {
+	width: 900px;
+	margin: 0 auto;
+	text-align: left;
+}
+header {
+	background-image:url(../images/PMS_title.png);
+	background-repeat: no-repeat;
+	height: 108px;
+	margin: 0;
+	padding: 0;
+}
+input {
+	width: 100%;
+}
+
