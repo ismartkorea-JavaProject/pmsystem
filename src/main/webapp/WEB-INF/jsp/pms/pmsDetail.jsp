@@ -43,7 +43,8 @@ $(function() {
  	<nav></nav>
  	<article> 
     <!-- container 시작 -->
-    <div id="container" class="container">    
+    <div id="container" class="container">
+    	<div class="row">
    			<div id="content">  			
 			<form:form modelAttribute="pms" name="frm" method="post">
 			    <input type="hidden" name="no"  value="<c:out value='${result.no}'/>"/>		    
@@ -121,7 +122,8 @@ $(function() {
 				<input type="button" class="btn btn-primary btn-sm" id="cancelBtn" name="cancelBtn" value="취소"/>
 				<input type="button" class="btn btn-primary btn-sm" id="deleteBtn" name="deleteBtn" value="삭제"/>
 				<input type="button" class="btn btn-primary btn-sm" id="updateBtn" name="updateBtn" value="수정"/>
-			</div>			  
+			</div>
+		</div>			  
     </div>
 	</article>
 	<div class="clear"></div>

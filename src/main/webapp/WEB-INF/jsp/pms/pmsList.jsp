@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <title>PMS 리스트 화면</title>
@@ -40,6 +40,7 @@ $(function() {
  	<article>
 	<!-- container 시작 -->
 	<div id="main_container" class="container">
+		<div class="row">
 				<div id="buttons" style="text-align:right;">
 					<input type="button" class="btn btn-primary btn-sm" id="newTopBtn" name="newTopBtn" value="신규"/>
 				</div>	
@@ -82,6 +83,7 @@ $(function() {
 				<div id="buttons" style="text-align:right;">
 					<input type="button" class="btn btn-primary btn-sm" id="newBottonBtn" name="newBottonBtn" value="신규"/>
 				</div>
+		</div>				
 	</div>
 	</article>
 	<div class="clear"></div>
